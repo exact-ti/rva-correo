@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exact.inteface.mapper.ReporteRecojoMapper">
+	<resultMap type="ReporteRecojo" id="result">
+		<result property="codigoAgencia" column="CodigoAgencia" />
+		<result property="agencia" column="Agencia" />
+		<result property="ArcoInferior" column="ArcoInferior" />
+		<result property="ArcoSuperior" column="ArcoSuperior" />
+		<result property="Proveedor" column="Proveedor" />
+		<result property="Estado" column="Estado" />
+		<result property="Indicador" column="Indicador" />
+		<result property="codigoIndicador" column="CodigoIndicador" />
+		<result property="IdProveedor" column="IdProveedor"/>
+		<result property="iGrupo" column="iGrupo"/>
+	</resultMap>
+	<select id="GetReporte" resultMap="result" statementType="CALLABLE"
+		parameterType="ReporteRecojo">
+		EXEC WEB_REPORTE_R_PENDIENTES
+	</select>
+</mapper>

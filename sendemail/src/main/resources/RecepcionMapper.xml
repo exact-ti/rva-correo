@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exact.inteface.mapper.ReporteRecepcionMapper">
+	<resultMap type="ReporteRecepcion" id="resultado">
+		<result property="idProveedor" column="IdProveedor" />
+		<result property="proveedor" column="Proveedor" />
+		<result property="asignados" column="Asignados" />
+		<result property="recogidos" column="Recogidos" />
+		<result property="sinmovimiento" column="SinMovimiento" />
+		<result property="pendientes" column="Pendientes" />
+		<result property="recogidosatiempo" column="RecogidosATiempo" />
+		<result property="recogidosfueraderango" column="RecogidosFueraRango" />
+		<result property="entregados" column="Entregados" />
+		<result property="faltantes" column="Faltantes" />
+		<result property="CodigoProveedor" column="CodigoProveedor" />
+		<result property="sArcoHorario" column="sArcoHorario" />
+		<result property="iMeta" column="iMeta" />
+		<result property="iResultado" column="iResultado" />
+		<result property="sIndicador" column="sIndicador" />
+	</resultMap>
+	<select id="GetReporteRecepcion" resultMap="resultado" statementType="CALLABLE"
+		parameterType="ReporteRecepcion">WEB_REPORTE_R_CLIENTE #{date, jdbcType=DATE, mode=IN},#{idProveedor, jdbcType=INTEGER, mode=IN}</select>
+</mapper>

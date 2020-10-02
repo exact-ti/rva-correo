@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exact.inteface.mapper.UsuarioCorreoMapper">
+	<resultMap type="CorreoUsuario" id="result">
+		<result property="sidUsuario" column="iIdUsuario" />
+		<result property="usuario" column="sUsuario" />
+		<result property="apellido" column="sApellido" />
+		<result property="correo" column="sCorreo" />
+		<result property="descripcionTipo" column="sDescripcionTipo" />
+		<result property="iGrupo" column="iGrupo" />
+		<result property="IdProveedor" column="IdProveedor" />
+		<result property="sClave" column="sClave" /><result property="correoCC"
+			column="sCorreoCC" />
+		<result property="alias" column="sAlias" />
+	</resultMap>
+	<select id="getCorreo" resultMap="result" statementType="CALLABLE"
+		parameterType="CorreoUsuario">
+		EXEC WEB_USUARIO_R_CORREO
+	</select>
+</mapper>
